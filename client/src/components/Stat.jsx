@@ -1,12 +1,8 @@
-export default function Stat({ label, value }) {
+export default function Stat({ value, label }) {
   return (
-    <div style={{
-      padding: 12,
-      border: "1px solid var(--border)",
-      borderRadius: 12
-    }}>
-      <strong>{value}</strong>
-      <div style={{ fontSize: 12, color: "var(--text-muted)" }}>{label}</div>
+    <div className="stat">
+      <div className="stat-value">{value}</div>
+      <div className="stat-label">{label}</div>
     </div>
   );
 }

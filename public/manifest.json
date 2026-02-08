@@ -1,8 +1,8 @@
 {
   "name": "Academic Ledger",
-  "short_name": " AcademicLedger",
+  "short_name": "Academic Ledger",
+  "version": "3.1.0",
   "start_url": "/",
-  "version": "2.0.0",
   "display": "standalone",
   "background_color": "#020617",
   "theme_color": "#020617",

@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top left, #0b1225, #05070d 65%);
+  color: var(--text-main);
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+}
+.auth-links {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.auth-links span {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.auth-links span:hover {
+  text-decoration: underline;
+}
+.role-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.role-switch button {
+  padding: 12px 0;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.role-switch button.active {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #001;
+  box-shadow: 0 8px 30px rgba(79,172,254,0.35);
+  border: none;
+}
+/* ===== AUTH LAYOUT ===== */
+
+.auth-shell {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr; /* GOLDEN RATIO */
+  align-items: center;
+  padding: clamp(24px, 6vw, 80px);
+  gap: 48px;
+}
+
+.auth-left h1 {
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.auth-left .subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.auth-right {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 900px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .auth-left {
+    text-align: center;
+  }
+
+  .stats-row {
+    justify-content: center;
+  }
+}
