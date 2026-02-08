@@ -3,9 +3,16 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import Stat from "../components/Stat";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function LoginPage({ setPage }) {
+export default function LoginPage() {
   const [role, setRole] = useState("student");
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    if (role === "student") navigate("/student");
+    else navigate("/staff");
+  };
 
   return (
     <AuthLayout
@@ -48,12 +55,12 @@ export default function LoginPage({ setPage }) {
           <Input placeholder="Email / Username" />
           <Input type="password" placeholder="Password" />
 
-          <Button>Login</Button>
+          <Button onClick={handleLogin}>Login</Button>
 
           <p className="auth-links">
-            <span onClick={() => setPage("forgot")}>Forgot password?</span>
+            <span onClick={() => navigate("/forgot")}>Forgot password?</span>
             {" • "}
-            <span onClick={() => setPage("register")}>Create account</span>
+            <span onClick={() => navigate("/register")}>Create account</span>
           </p>
         </div>
       }

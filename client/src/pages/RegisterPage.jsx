@@ -1,41 +1,36 @@
-import AuthLayout from "../layout/AuthLayout";
+import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
 
-export default function RegisterPage({ setPage }) {
+export default function RegisterPage() {
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    alert("✅ Account created successfully!");
+    navigate("/");
+  };
+
   return (
-    <AuthLayout
-      left={
-        <>
-          <h1>Create Account</h1>
-          <p className="subtitle">
-            Secure academic identity for students.
-          </p>
-        </>
-      }
-      right={
-        <div className="auth-card">
-          <Input placeholder="Full Name" />
-          <Input placeholder="Initial" />
-          <Input placeholder="Age" />
-          <Input type="date" placeholder="Date of Birth" />
-          <Input placeholder="Email ID" />
-          <Input placeholder="Phone Number" />
-          <Input type="file" />
-          <Input
-            type="password"
-            placeholder="Password (min 8 chars, 1 number)"
-          />
+    <div className="auth-card">
+      <h2>Create Account</h2>
 
-          <Button>Create Account</Button>
+      <Input placeholder="Full Name" />
+      <Input placeholder="Initial" />
+      <Input placeholder="Age" />
+      <Input type="date" />
+      <Input placeholder="Email" />
+      <Input placeholder="Phone Number" />
+      <Input placeholder="ID Card Number" />
+      <Input
+        type="password"
+        placeholder="Password (min 8 chars, 1 number)"
+      />
 
-          <p className="auth-links">
-            <span onClick={() => setPage("login")}>
-              Already have an account? Login
-            </span>
-          </p>
-        </div>
-      }
-    />
+      <Button onClick={handleRegister}>Create Account</Button>
+
+      <p className="auth-links">
+        <span onClick={() => navigate("/")}>Back to login</span>
+      </p>
+    </div>
   );
 }

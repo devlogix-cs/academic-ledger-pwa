@@ -158,3 +158,25 @@
     max-width: 420px;
   }
 }
+@media (max-width: 900px) {
+  .auth-wrapper {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 40px;
+  }
+
+  .auth-left {
+    text-align: center;
+  }
+
+  .stats-row {
+    justify-content: center;
+  }
+}
+:root {
+  --text-main: #ffffff;
+  --text-muted: rgba(255,255,255,0.65);
+  --accent: #f5c76a; /* GOLD */
+  --panel: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+}

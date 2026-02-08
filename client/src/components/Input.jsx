@@ -1,3 +1,9 @@
-export default function Input(props) {
-  return <input {...props} className="input" />;
+export default function Input({ type = "text", ...props }) {
+  return (
+    <input
+      type={type}
+      className="input"
+      {...props}
+    />
+  );
 }
